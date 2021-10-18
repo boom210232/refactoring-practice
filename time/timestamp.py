@@ -1,4 +1,4 @@
-package time
+
 """
 This code creates a datetime.time object from a string.
 
@@ -9,7 +9,8 @@ This code creates a datetime.time object from a string.
 
 import datetime
 
-def createTimeFromTimestamp(timestamp: str) -> datetime.time:
+
+def create_time_from_timestamp(timestamp: str) -> datetime.time:
     """Create a datetime.time object from a string in the form 'hh:mm:ss'.
 
     Args:
@@ -31,7 +32,20 @@ def createTimeFromTimestamp(timestamp: str) -> datetime.time:
     args = timestamp.split(":")
     if len(args) != 3:
         raise ValueError('Timestamp must be "hh:mm:ss"')
-    else:
-        # if the timestamp is not valid, this may raise TypeError or ValueError
-        if 0 <= int(args[0]) <= 23 and 0 <= int(args[1]) < 60 and 0 <= int(args[2]) < 60:
-            return datetime.time(int(args[0]), int(args[1])), int(args[2]))
+    # Use meaningful name
+    # Introduce Explanatory Variable
+    (hours, minute, seconds) = args
+
+    # if the timestamp is not valid, this may raise TypeError or ValueError
+    if is_valid_time(hours, minute, seconds):
+        return datetime.time(int(hours), int(minute), int(seconds))
+    # otherwise the timestamp is invalid.
+    # return ValueError('Timestamp must be "hh:mm:ss"')
+
+
+def is_valid_time(hours, minute, seconds):
+    """Verify the timestamp components are a valid time.
+
+    return : value error if time is invalid form
+    """
+    return 0 <= int(hours) <= 23 and 0 <= int(minute) < 60 and 0 <= int(seconds) < 60
