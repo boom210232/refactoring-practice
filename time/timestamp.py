@@ -1,4 +1,3 @@
-
 """
 This code creates a datetime.time object from a string.
 
@@ -23,7 +22,7 @@ def create_time_from_timestamp(timestamp: str) -> datetime.time:
     ValueError if timestamp is not a string in form "hh:mm:ss"
 
     Example:
-    >>> t = createTimeFromTimestamp("9:23:15")
+    >>> t = create_time_from_timestamp("9:23:15")
     >>> type(t)
     <class 'datetime.time'>
     >>> print(t)
@@ -40,7 +39,7 @@ def create_time_from_timestamp(timestamp: str) -> datetime.time:
     if is_valid_time(hours, minute, seconds):
         return datetime.time(int(hours), int(minute), int(seconds))
     # otherwise the timestamp is invalid.
-    return ValueError('Timestamp must be "hh:mm:ss"')
+    # return ValueError('Timestamp must be "hh:mm:ss"')
 
 
 def is_valid_time(hours, minute, seconds):
