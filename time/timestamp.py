@@ -39,7 +39,7 @@ def create_time_from_timestamp(timestamp: str) -> datetime.time:
     if is_valid_time(hours, minute, seconds):
         return datetime.time(int(hours), int(minute), int(seconds))
     # otherwise the timestamp is invalid.
-    # return ValueError('Timestamp must be "hh:mm:ss"')
+    return ValueError('Timestamp must be "hh:mm:ss"')
 
 
 def is_valid_time(hours, minute, seconds):
@@ -48,3 +48,8 @@ def is_valid_time(hours, minute, seconds):
     return : value error if time is invalid form
     """
     return 0 <= int(hours) <= 23 and 0 <= int(minute) < 60 and 0 <= int(seconds) < 60
+
+t = create_time_from_timestamp("9:23:15")
+print(t)
+t = create_time_from_timestamp("9:23:85")
+print(t)
