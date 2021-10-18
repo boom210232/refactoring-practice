@@ -40,7 +40,7 @@ def create_time_from_timestamp(timestamp: str) -> datetime.time:
     if is_valid_time(hours, minute, seconds):
         return datetime.time(int(hours), int(minute), int(seconds))
     # otherwise the timestamp is invalid.
-    # return ValueError('Timestamp must be "hh:mm:ss"')
+    return ValueError('Timestamp must be "hh:mm:ss"')
 
 
 def is_valid_time(hours, minute, seconds):
