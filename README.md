@@ -11,6 +11,11 @@ Each subdirectory contains some code that needs refactoring.
 ## `time/timestamp.py`
 
 Refactor timestamp.py.  2 or 3 refactorings are possible.
+ ``` 
+ 1. Use meaningful name to introduce Explanatory Variable
+ 2. Sperate some method to function to easier understand and use when it need to place in multi place
+ ```           
+
 
 
 ## `game_framework/gamelib.py`
@@ -21,6 +26,12 @@ Look for refactorings in the class `GameApp`.
 
 * Encapsulate a collection - provide behavior that subclasses of GameApp need instead of requiring them to manipulate a collection that belongs to the GameApp class.
   - Hint: `elements`
+  ``` 
+  1. Use constant variable instead magic number in class
+  2. Make it less duplicate by make call from outside 
+  3. Use library function instead normal string if it has.
+  4. Make call init instead make it inside function and if it has useful element from file use it!
+  ```
 
 ## `recipe/recipe.py` and `recipe/main.py`
 
@@ -34,7 +45,8 @@ The Recipe class defines a recipe for a hot beverage with attributes:
 * sugar - units of sugar
 * price - (float) price in Baht
 
-Refactor `main.py`.  What can you do to eliminate the long, boring code?
+Refactor `main.py`.  What can you do to eliminate the long, boring code?        
+` - make a function to call class for create recipe because every recipe always write the same method`
 
 
 
