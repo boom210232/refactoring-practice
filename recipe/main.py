@@ -14,12 +14,14 @@ def create_recipe(name, chocolate=0, coffee=0, milk=0, sugar=0, price=0.0):
 
 
 if __name__ == '__main__':
-    recipe1 = Recipe("Coffee with sugar")
-    recipe1.coffee = 4
-    recipe1.sugar = 2
-    recipe1.milk = 0
-    recipe1.price = 30.0
-    print(recipe1)
+    # recipe1 = Recipe("Coffee with sugar")
+    # recipe1.coffee = 4
+    # recipe1.sugar = 2
+    # recipe1.milk = 0
+    # recipe1.price = 30.0
+    # print(recipe1)
+
+    refactor_recipe = create_recipe("Coffee with sugar", 0, 4, 0, 2, 30.0)
 
     recipe2 = create_recipe("Latte", 0, 2, 1, 2, 40.0)
 
